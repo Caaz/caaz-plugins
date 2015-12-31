@@ -2,7 +2,7 @@
 # Time's up! The answer was: gary cooper
 # Winner: YellowKing; Answer: mars; Time: 4.526s; Streak: 1; Points: 5; Total: 88
 # Channel Message
-echo("Trivia 0.6!");
+# echo("Trivia 0.6!");
 for ('Channel Msg Hilight', 'Channel Message') { hook_print($_, \&trivia_text_handler); }
 sub trivia_text_handler {
   if(get_info('channel') =~ /808$/) {
@@ -14,7 +14,8 @@ sub trivia_text_handler {
         foreach(keys %{$c{data}{trivia}{answers}}) {
         $c{tmp}{'trivia'}{'key'} = $q;
           if($_ =~ /$q/i) {
-            command("timer 3 say ".$c{data}{trivia}{answers}{$q});
+            command("echo ".$c{data}{trivia}{answers}{$q});
+            # command("timer ".(3+ int rand 3)." say ".$c{data}{trivia}{answers}{$q});
             delete $c{tmp}{'trivia'}{'key'};;
           }
         }
