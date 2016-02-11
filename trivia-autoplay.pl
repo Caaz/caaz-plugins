@@ -2,7 +2,9 @@
 # Time's up! The answer was: gary cooper
 # Winner: YellowKing; Answer: mars; Time: 4.526s; Streak: 1; Points: 5; Total: 88
 # Channel Message
-# echo("Trivia 0.6!");
+# echo("Trivia 0.6!")
+;use Xchat qw(:all);
+register('Trivia Autoplay', '1.0.0', 'Fuck your Trivia.');
 for ('Channel Msg Hilight', 'Channel Message') { hook_print($_, \&trivia_text_handler); }
 sub trivia_text_handler {
   if(get_info('channel') =~ /808$/) {
