@@ -1,3 +1,5 @@
+use Xchat qw(:all);
+register('Fracture', '1.0.0', 'This plugin beautifies IRC output, creating less clutter in the nick area.');
 my %last = ();
 for('Channel Message', 'Private Message to Dialog', 'Your Message') { hook_print($_,\&handle_text,{'data'=>[$_]}); }
 for('Channel Msg Hilight','Channel Action','Join','Quit','Part') { hook_print($_,\&reset_last); }
